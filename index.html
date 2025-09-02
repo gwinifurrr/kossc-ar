@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>KOSSC AR Test</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://rawcdn.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-      <!-- Marker: use your poster files -->
-      <a-marker type="nft" url="poster/hptestpost1">
-        <!-- Video plane -->
-        <video id="kosscvid" src="video/hptestvid.mp4" autoplay loop playsinline muted></video>
+    <a-scene embedded arjs>
+      
+      <!-- Preload video -->
+      <a-assets>
+        <video 
+          id="kosscvid" 
+          src="video/hptestvid.mp4" 
+          preload="auto" 
+          autoplay 
+          loop 
+          playsinline 
+          muted
+          crossorigin="anonymous">
+        </video>
+      </a-assets>
 
+      <!-- NFT marker -->
+      <a-marker type="nft" url="poster/hptestpost1">
+        <!-- Plane that shows video -->
         <a-plane 
           src="#kosscvid" 
           width="4" 
           height="2.25" 
-          rotation="-90 0 0" 
-          position="0 0 0">
+          position="0 0 0" 
+          rotation="-90 0 0">
         </a-plane>
       </a-marker>
 

@@ -12,17 +12,15 @@
       <!-- Marker: use your poster files -->
       <a-marker type="nft" url="poster/hptestpost1">
         <!-- Video plane -->
-        <a-video 
-          src="video/hptestvid.mp4" 
+        <video id="kosscvid" src="video/hptestvid.mp4" autoplay loop playsinline muted></video>
+
+        <a-plane 
+          src="#kosscvid" 
           width="4" 
           height="2.25" 
-          position="0 0 0" 
-          rotation="-90 0 0"
-          autoplay 
-          loop 
-          playsinline 
-          muted>
-        </a-video>
+          rotation="-90 0 0" 
+          position="0 0 0">
+        </a-plane>
       </a-marker>
 
       <!-- Camera -->
